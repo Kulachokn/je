@@ -25,20 +25,20 @@ event.preventDefault()
       return
    }
 
-fetchCountries(value).then(responce => {
-  console.log(responce)
-   if(responce.length <= 10) {
-      const listCountries = responce.map(res => listCountry(res))
+fetchCountries(value).then(data => {
+  console.log(data)
+   if(data.length <= 10) {
+      const listCountries = data.map(res => listCountry(res))
       cardList.innerHTML = listCountries.join(``)
       cardDiv.innerHTML = ``;
    }
-   if (responce.length === 1) {
+   if (data.length === 1) {
       // const markup =   countryCard(responce[0]);
-     console.log(countryCard(responce[0]));
-      cardDiv.innerHTML = countryCard(responce[0]);
+     console.log(countryCard(data[0]));
+      cardDiv.innerHTML = countryCard(data[0]);
       cardList.innerHTML = '';
     }
-  if(responce.length > 10) {
+  if(data.length > 10) {
    Notiflix.Notify.info(`Too many matches found. Please enter a more specific name.`)
   }
    }).catch(err=> {
