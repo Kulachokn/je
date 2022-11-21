@@ -1,4 +1,4 @@
-<div>
+{{#this}}
   <div class="country__card">
     <img src="{{flags.svg}}" alt="{{name.official}}" width="80" height="50">
     <h2 class="country__name-official">{{this.name.official}}</h2>
@@ -9,4 +9,4 @@
     <li class="country__languages">
       <span class="country__span languages">Languages: </span>{{#each languages}} {{this}} {{/each}}</li>
   </ul>
-</div>
+{{/this}}
