@@ -14,9 +14,9 @@ const cardList = document.querySelector('.country-list')
 
 formEl.addEventListener('input', debounce(onFormSubmit , DEBOUNCE_DELAY));
 
-function onFormSubmit(event) { 
+function onFormSubmit(event) {
 event.preventDefault()
-   const value = event.target.value; 
+   const value = event.target.value;
    let sanitizer = value.trim();
 
    if(!sanitizer) {
@@ -26,14 +26,16 @@ event.preventDefault()
    }
 
 fetchCountries(value).then(responce => {
+  console.log(responce)
    if(responce.length <= 10) {
-      const listCountries = responce.map(responce => listCountry(responce))
-      cardList.innerHTML = listCountries.join(``) 
+      const listCountries = responce.map(res => listCountry(res))
+      cardList.innerHTML = listCountries.join(``)
       cardDiv.innerHTML = ``;
    }
    if (responce.length === 1) {
-      const markup =   countryCard(responce[0]);
-      cardDiv.innerHTML = markup;
+      // const markup =   countryCard(responce[0]);
+     console.log(countryCard(responce[0]));
+      cardDiv.innerHTML = countryCard(responce[0]);
       cardList.innerHTML = '';
     }
   if(responce.length > 10) {
