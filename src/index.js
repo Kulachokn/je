@@ -37,7 +37,8 @@ fetchCountries(sanitizer).then(data => {
    if (data.length === 1) {
       // const markup =   countryCard(responce[0]);
      console.log(countryCard(data[0]));
-      cardDiv.innerHTML = countryCard(data[0]);
+     const markup = data.map(el => countryCard(el)).join('');
+     cardDiv.innerHTML = markup;
       cardList.innerHTML = '';
     }
   if(data.length > 10) {
