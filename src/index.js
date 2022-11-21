@@ -29,6 +29,9 @@ event.preventDefault()
 
 fetchCountries(sanitizer).then(data => {
   console.log(data.length)
+  if(data.length > 10) {
+    Notiflix.Notify.info(`Too many matches found. Please enter a more specific name.`)
+  }
    if(data.length <= 10) {
       const listCountries = data.map(res => listCountry(res))
       cardList.innerHTML = listCountries.join(``)
@@ -41,9 +44,6 @@ fetchCountries(sanitizer).then(data => {
      cardDiv.innerHTML = markup;
       cardList.innerHTML = '';
     }
-  if(data.length > 10) {
-   Notiflix.Notify.info(`Too many matches found. Please enter a more specific name.`)
-  }
    }).catch(err => {
        Notiflix.Notify.failure(`Oops, there is no country with that name`);
        cardList.innerHTML =``;
