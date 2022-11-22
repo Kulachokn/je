@@ -1,26 +1,8 @@
-<!--{{#this}}-->
-<!--  <div class="country__card">-->
-<!--    <img src="{{flags.svg}}" alt="{{name.official}}" width="80" height="50">-->
-<!--    <h2 class="country__name-official">{{name.official}}</h2>-->
-<!--  </div>-->
-<!--  <ul class="country__list">-->
-<!--    <li class="country__text"><span class="country__span">Capital: </span>{{capital}}</li>-->
-<!--    <li class="country__text"><span class="country__span">Population: </span>{{population}}</li>-->
-<!--    <li class="country__languages">-->
-<!--      <span class="country__span languages">Languages: </span>{{#each languages}} {{this}} {{/each}}</li>-->
-<!--  </ul>-->
-<!--{{/this}}-->
-
-<div class='country'>
-  <img
-    class='capital-flag'
-    src='{{flags.svg}}'
-    alt='{{name.official}}'
-    width='100'
-  />
-  <h2 class='country-title'>Country: {{name.official}}</h2>
-  <p class='country-text'>Capital: {{capital}}</p>
-  <p class='country-text'>Population: {{population}}</p>
-  <p class='country-text'>Languages:
-    {{#each languages}}{{#if @index}}, {{/if}}<span>{{this}}</span>{{/each}}</p>
+<div class="country__card">
+  <img src="{{this.flags.svg}}" alt="{{this.name.official}}" width="80" height="50">
+  <h2 class="country__name-official">{{this.name.official}}</h2>
 </div>
+<ul class="country__list">
+  <li class="country__text "><span class="country__span">Capital: </span>{{this.capital}}</li>
+  <li class="country__text"><span class="country__span">Population: </span>{{this.population}}</li>
+  <li class="country__languages "><span class="country__span languages">Languages: </span>{{#each languages}} {{this}}{{/each}}</li> </ul>
