@@ -17,7 +17,7 @@ const cardList = document.querySelector('.country-list')
 formEl.addEventListener('input', onFormSubmit);
 
 function onFormSubmit(event) {
-event.preventDefault()
+// event.preventDefault()
    const value = event.target.value;
    let sanitizer = value.trim();
 
@@ -34,7 +34,8 @@ fetchCountries(sanitizer).then(data => {
        Notiflix.Notify.failure(`Oops, there is no country with that name`);
        cardList.innerHTML =``;
        cardDiv.innerHTML = ``;
-       return err
+       console.log(err)
+       return err;
       })
 }
 
