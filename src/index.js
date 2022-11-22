@@ -42,11 +42,6 @@ function render(data) {
   if(data.length > 10) {
     Notiflix.Notify.info(`Too many matches found. Please enter a more specific name.`)
   }
-  if(data.length <= 10) {
-    const listCountries = data.map(res => listCountry(res))
-    cardList.innerHTML = listCountries.join(``)
-    cardDiv.innerHTML = ``;
-  }
   if (data.length === 1) {
     // const markup =   countryCard(responce[0]);
     console.log(countryCard(data[0]));
@@ -54,6 +49,12 @@ function render(data) {
     cardDiv.innerHTML = markup;
     cardList.innerHTML = '';
   }
+  if(data.length <= 10) {
+    const listCountries = data.map(res => listCountry(res))
+    cardList.innerHTML = listCountries.join(``)
+    cardDiv.innerHTML = ``;
+  }
+
 }
 
 
