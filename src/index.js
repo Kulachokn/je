@@ -49,7 +49,7 @@ function render(data) {
     cardDiv.innerHTML = markup;
     cardList.innerHTML = '';
   }
-  if(data.length <= 10) {
+  if(data.length > 1 && data.length <= 10) {
     const listCountries = data.map(res => listCountry(res))
     cardList.innerHTML = listCountries.join(``)
     cardDiv.innerHTML = ``;
