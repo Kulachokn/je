@@ -25,19 +25,19 @@ function onFormSubmit(event) {
     return
   }
 
-  fetchCountries(value).then(responce => {
-    if(responce.length <= 10) {
-      const listCountries = responce.map(responce => listCountry(responce))
+  fetchCountries(value).then(result => {
+    if(result.length <= 10) {
+      const listCountries = result.map(el => listCountry(el))
       cardList.innerHTML = listCountries.join(``)
       cardDiv.innerHTML = ``;
     }
-    if (responce.length === 1) {
-      const markup =   responce.map(elem => countryCard(elem))
+    if (result.length === 1) {
+      const markup =   result.map(elem => countryCard(elem))
       console.log(markup)
       cardDiv.innerHTML = markup;
       cardList.innerHTML = '';
     }
-    if(responce.length > 10) {
+    if(result.length > 10) {
       Notiflix.Notify.info(`Too many matches found. Please enter a more specific name.`)
     }
   }).catch(err=> {
