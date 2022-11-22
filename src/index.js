@@ -1,5 +1,5 @@
 import './css/styles.css';
-// import countryCard from './template/countryHbs.hbs'
+import countryCard from './template/countryHbs.hbs'
 import listCountry from './template/listCountry.hbs'
 import { fetchCountries } from './fetchCountries';
 var debounce = require('lodash.debounce');
@@ -32,7 +32,7 @@ function onFormSubmit(event) {
       cardDiv.innerHTML = ``;
     }
     if (responce.length === 1) {
-      const markup =   responce.map(elem => countryTmp(elem))
+      const markup =   responce.map(elem => countryCard(elem))
       console.log(markup)
       cardDiv.innerHTML = markup;
       cardList.innerHTML = '';
@@ -48,16 +48,16 @@ function onFormSubmit(event) {
   })
 };
 
-function countryTmp(countries) {
-
-      return `<h1 class="country-name">${countries.name.common}</h1>
-    <div class="country-wrapper">
-        <p class="country-capital">Capital: ${countries.capital}</p>
-        <p class="country-population">Population: ${countries.population}</p>
-        <h2 class="country-languages">Languages: ${Object.values(countries.languages).join(', ')} </h2>
-        <div class="country__flag_wrapper">
-            <img src="${countries.flags.svg}" alt="country flag" class="country__flag" width="250">
-        </div>
-    </div>`
-}
+// function countryTmp(countries) {
+//
+//       return `<h1 class="country-name">${countries.name.common}</h1>
+//     <div class="country-wrapper">
+//         <p class="country-capital">Capital: ${countries.capital}</p>
+//         <p class="country-population">Population: ${countries.population}</p>
+//         <h2 class="country-languages">Languages: ${Object.values(countries.languages).join(', ')} </h2>
+//         <div class="country__flag_wrapper">
+//             <img src="${countries.flags.svg}" alt="country flag" class="country__flag" width="250">
+//         </div>
+//     </div>`
+// }
 
