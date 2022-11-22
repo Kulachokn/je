@@ -1,10 +1,10 @@
 <div class="country__card">
-  <img src="{{this.flags.svg}}" alt="{{this.name.official}}" width="80" height="50">
-  <h2 class="country__name-official">{{this.name.official}}</h2>
+  <img src="{{flags.svg}}" alt="{{name.official}}" width="80" height="50">
+  <h2 class="country__name-official">{{name.official}}</h2>
 </div>
 <ul class="country__list">
-  <li class="country__text "><span class="country__span">Capital: </span>{{this.capital}}</li>
-  <li class="country__text"><span class="country__span">Population: </span>{{this.population}}</li>
+  <li class="country__text "><span class="country__span">Capital: </span>{{capital}}</li>
+  <li class="country__text"><span class="country__span">Population: </span>{{population}}</li>
   <li class="country__languages "><span class="country__span languages">Languages: </span>{{#each languages}}{{#if @index
 }}, {{/if}}<span>{{this}}</span>{{/each}}</li>
 </ul>
