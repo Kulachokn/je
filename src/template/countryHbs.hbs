@@ -5,6 +5,5 @@
 <ul class="country__list">
   <li class="country__text "><span class="country__span">Capital: </span>{{capital}}</li>
   <li class="country__text"><span class="country__span">Population: </span>{{population}}</li>
-  <li class="country__languages "><span class="country__span languages">Languages: </span>{{#each languages}}{{#if @index
-}}, {{/if}}<span>{{this}}</span>{{/each}}</li>
+  <li class="country__languages "><span class="country__span languages">Languages: </span>{{#each languages}}<span>{{#if @index includeZero=false}}, {{/if}}{{this}}</span>{{/each}}</li>
 </ul>
